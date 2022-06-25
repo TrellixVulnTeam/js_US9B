@@ -1,1 +1,1 @@
-*{margin:0;padding:0}.box{background-color:#f2f0f0;color:red}
+*{margin:0;padding:0}.no-webp .box{background:url(../img/5.jpg) 0 0 no-repeat}.box{width:100%;height:400px}.webp .box{background:url(../img/5.webp) 0 0 no-repeat}

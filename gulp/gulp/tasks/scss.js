@@ -19,7 +19,7 @@ export const scss = () => {
         .pipe(groupCssMediaQueries())
         .pipe(webpcss(
             {
-                webpClass: "webp",
+                webpClass: ".webp",
                 noWebpClass: ".no-webp",
             }
         ))
