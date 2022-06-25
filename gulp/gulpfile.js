@@ -4,6 +4,8 @@ import { plugins } from "./gulp/config/plugins.js";
 import { js } from "./gulp/tasks/js.js";
 
 global.app = {
+    isBuild: process.argv.includes('--build'),
+    isDev: !process.argv.includes('--build'),
     path: path,
     gulp: gulp,
     plugins: plugins,
@@ -15,6 +17,7 @@ import { html } from "./gulp/tasks/html.js";
 import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { images } from "./gulp/tasks/images.js";
+import { svgSprive } from "./gulp/tasks/svgSprive.js"
 
 
 function watcher() {
@@ -25,6 +28,7 @@ function watcher() {
     gulp.watch(path.watch.images, images);
 }
 
+export { svgSprive }
 
 const mainTasks = gulp.parallel(copy, html, scss, js, images)
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server))
